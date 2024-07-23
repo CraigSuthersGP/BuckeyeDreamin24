@@ -23,9 +23,10 @@ function initialize() {
 
 async function login(browser, eptCapture, statsRecorder) {
     await browser.url('https://login.salesforce.com')
+    let username = process.env.USERNAME;
     let password = process.env.PASSWORD;
 
-    await browser.$('#username').setValue('grandstandperformance@resilient-impala-jzsy11.com')
+    await browser.$('#username').setValue(username)
     await browser.$('#password').setValue(password);
     await browser.$('#Login').click();
 
